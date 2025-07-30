@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent-primary: #00ff88;
+  --accent-secondary: #0066ff;
+  --grid-color: rgba(255, 255, 255, 0.05);
 }
 
 @theme inline {
@@ -16,11 +19,259 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent-primary: #00ff88;
+    --accent-secondary: #0066ff;
+    --grid-color: rgba(255, 255, 255, 0.03);
   }
 }
 
+/* Programmer-themed dark background */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
+
+/* Dark gradient background with programming theme */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 102, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(136, 0, 255, 0.02) 0%, transparent 50%),
+    linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+  z-index: -2;
+}
+
+/* Circuit board tech pattern */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* Circuit nodes */
+    radial-gradient(circle at 20% 30%, rgba(0, 255, 136, 0.4) 2px, transparent 2px),
+    radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 60% 20%, rgba(136, 0, 255, 0.25) 1px, transparent 1px),
+    radial-gradient(circle at 30% 80%, rgba(255, 136, 0, 0.2) 1px, transparent 1px);
+  background-size: 
+    400px 400px, 350px 350px, 200px 200px, 300px 300px;
+  background-position: 
+    0 0, 100px 100px, 50px 150px, 200px 50px;
+  z-index: -1;
+  animation: circuitPulse 30s ease-in-out infinite;
+}
+
+/* Enhanced floating particles animation with multiple lines */
+.programming-particles,
+.programming-particles-2,
+.programming-particles-3,
+.programming-particles-4 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Line 1: Programming symbols - Top */
+.programming-particles::before {
+  content: '{ } < > / * + = ; ( ) [ ] . , : " \' ` ~ # $ % & | \\ ^ @ ! ? { } < > / * +';
+  position: absolute;
+  top: 15%;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: rgba(0, 255, 136, 0.4);
+  white-space: nowrap;
+  animation: floatCode 35s linear infinite;
+  transform: translateX(-100%);
+}
+
+/* Line 2: Code snippets - Middle */
+.programming-particles::after {
+  content: 'function() { return true; } const dev = "awesome"; if (coding) { enjoy(); } while(learning) { grow(); }';
+  position: absolute;
+  top: 45%;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: rgba(0, 102, 255, 0.35);
+  white-space: nowrap;
+  animation: floatCodeReverse 28s linear infinite;
+  transform: translateX(100%);
+}
+
+/* Line 3: More symbols - Upper third */
+.programming-particles-2::before {
+  content: '= > < / \\ * + - _ | & % $ # @ ! ? . , ; : \' " ` ~ ^ ( ) [ ] { } = > < /';
+  position: absolute;
+  top: 25%;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: rgba(136, 0, 255, 0.3);
+  white-space: nowrap;
+  animation: floatCode 40s linear infinite;
+  animation-delay: -10s;
+  transform: translateX(-100%);
+}
+
+/* Line 4: More code - Lower middle */
+.programming-particles-2::after {
+  content: 'class Developer { constructor() { this.awesome = true; } } => console.log("Hello World!");';
+  position: absolute;
+  top: 55%;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: rgba(255, 136, 0, 0.3);
+  white-space: nowrap;
+  animation: floatCodeReverse 32s linear infinite;
+  animation-delay: -8s;
+  transform: translateX(100%);
+}
+
+/* Line 5: Variable declarations - Lower */
+.programming-particles-3::before {
+  content: 'let code = "beautiful"; var skills = ["js", "ts", "react"]; const passion = Infinity;';
+  position: absolute;
+  top: 70%;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: rgba(0, 255, 136, 0.25);
+  white-space: nowrap;
+  animation: floatCode 26s linear infinite;
+  animation-delay: -15s;
+  transform: translateX(-100%);
+}
+
+/* Line 6: More symbols - Very top */
+.programming-particles-3::after {
+  content: '/* commenting life */ // TODO: be awesome ⚡ ⭐ 🚀 💻 ⚙️ 🔧 📱 🌐 🎯';
+  position: absolute;
+  top: 5%;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: rgba(255, 0, 136, 0.3);
+  white-space: nowrap;
+  animation: floatCodeReverse 38s linear infinite;
+  animation-delay: -5s;
+  transform: translateX(100%);
+}
+
+/* Line 7: More complex code - Bottom */
+.programming-particles-4::before {
+  content: 'async function buildDreams() { await learn(); return success(); } export default Developer;';
+  position: absolute;
+  top: 80%;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: rgba(0, 255, 255, 0.25);
+  white-space: nowrap;
+  animation: floatCode 30s linear infinite;
+  animation-delay: -20s;
+  transform: translateX(-100%);
+}
+
+/* Line 8: Final symbols - Mid */
+.programming-particles-4::after {
+  content: '💡 git commit -m "making magic happen" && git push origin main 🎨 ✨ 🔮';
+  position: absolute;
+  top: 35%;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 0, 0.3);
+  white-space: nowrap;
+  animation: floatCodeReverse 34s linear infinite;
+  animation-delay: -12s;
+  transform: translateX(100%);
+}
+
+/* Terminal cursor blink effect */
+.terminal-cursor {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  width: 8px;
+  height: 16px;
+  background: var(--accent-primary);
+  animation: blink 1s infinite;
+  z-index: 1;
+}
+
+.terminal-cursor::before {
+  content: 'dev@portfolio:~$ ';
+  position: absolute;
+  right: 15px;
+  top: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--accent-primary);
+  opacity: 0.6;
+}
+
+/* Animations */
+@keyframes circuitPulse {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg); 
+    opacity: 0.7;
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  20% { 
+    transform: translate(-2px, 1px) rotate(0.5deg); 
+    opacity: 0.9;
+    filter: brightness(1.1) hue-rotate(5deg);
+  }
+  40% { 
+    transform: translate(1px, -2px) rotate(-0.3deg); 
+    opacity: 0.8;
+    filter: brightness(0.95) hue-rotate(-3deg);
+  }
+  60% { 
+    transform: translate(-1px, 2px) rotate(0.2deg); 
+    opacity: 1;
+    filter: brightness(1.2) hue-rotate(8deg);
+  }
+  80% { 
+    transform: translate(2px, -1px) rotate(-0.1deg); 
+    opacity: 0.75;
+    filter: brightness(1.05) hue-rotate(-2deg);
+  }
+}
+
+@keyframes floatCode {
+  0% { transform: translateX(-100%) translateY(0px); opacity: 0; }
+  5% { opacity: 0.4; }
+  25% { transform: translateX(-50vw) translateY(-2px); }
+  50% { transform: translateX(0vw) translateY(0px); }
+  75% { transform: translateX(50vw) translateY(2px); }
+  95% { opacity: 0.4; }
+  100% { transform: translateX(100vw) translateY(0px); opacity: 0; }
+}
+
+@keyframes floatCodeReverse {
+  0% { transform: translateX(100vw) translateY(0px); opacity: 0; }
+  5% { opacity: 0.35; }
+  25% { transform: translateX(50vw) translateY(2px); }
+  50% { transform: translateX(0vw) translateY(0px); }
+  75% { transform: translateX(-50vw) translateY(-2px); }
+  95% { opacity: 0.35; }
+  100% { transform: translateX(-100%) translateY(0px); opacity: 0; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+
+
