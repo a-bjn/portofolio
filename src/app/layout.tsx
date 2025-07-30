@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./header/header";
 import Footer from "./footer/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
 });
 
 export const metadata: Metadata = {
@@ -27,15 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased` } 
+        className={`${dmSans.className} antialiased` } 
       >
         <div className="programming-particles"></div>
         <div className="programming-particles-2"></div>
         <div className="programming-particles-3"></div>
         <div className="programming-particles-4"></div>
-        <div className="terminal-cursor"></div>
         <Header/>
-        <div className="mx-auto w-full max-w-7xl ">
+        <div className="mx-auto w-full max-w-8xl">
           {children}
         </div>
         <Footer/>
