@@ -11,8 +11,8 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="flex justify-center items-center min-h-screen w-full px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto w-full">
+    <section id="hero" className="relative flex justify-center items-center h-screen w-full overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-6 text-white">
@@ -63,7 +63,7 @@ const HeroSection: React.FC = () => {
               style={{ transitionDelay: '0.8s' }}
             >
               <a 
-                href="https://github.com/yourusername" 
+                href="https://github.com/a-bjn" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r border-1 border-zinc-800 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
