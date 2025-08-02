@@ -25,10 +25,20 @@ export default function RootLayout({
       <body
         className={`${dmSans.className} antialiased` } 
       >
+        {/* Global programming particles */}
         <div className="programming-particles"></div>
         <div className="programming-particles-2"></div>
         <div className="programming-particles-3"></div>
         <div className="programming-particles-4"></div>
+        
+        {/* Global gradient background */}
+        <div className="fixed inset-0 bg-zinc-950 -z-10"></div>
+        <div className="fixed inset-0 bg-gradient-to-br from-emerald-950/10 via-transparent to-amber-950/5 -z-10"></div>
+        <div className="fixed inset-0 bg-gradient-to-tr from-transparent via-zinc-900/15 to-transparent -z-10"></div>
+        <div className="fixed top-0 left-0 w-1/2 h-1/2 bg-gradient-radial from-emerald-500/4 to-transparent rounded-full blur-3xl -z-10"></div>
+        <div className="fixed bottom-0 right-0 w-1/2 h-1/2 bg-gradient-radial from-amber-500/2 to-transparent rounded-full blur-3xl -z-10"></div>
+        <div className="fixed top-1/4 right-1/4 w-1/3 h-1/3 bg-gradient-radial from-cyan-500/3 to-transparent rounded-full blur-3xl -z-10"></div>
+        <div className="fixed bottom-1/4 left-1/4 w-1/3 h-1/3 bg-gradient-radial from-orange-600/2 to-transparent rounded-full blur-3xl -z-10"></div>
         <Header/>
         <div className="mx-auto w-full max-w-8xl">
           {children}
