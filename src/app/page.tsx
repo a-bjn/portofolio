@@ -3,7 +3,9 @@ import ProjectsSection from "./components/sections/projects-section";
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative z-0">
+      <div className="absolute inset-0 bg-gradient-cyan-tl pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-brown-tr pointer-events-none"></div>
       <HeroSection />
       <ProjectsSection />
     </main>

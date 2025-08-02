@@ -42,11 +42,28 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    linear-gradient(135deg, #050505 0%, #0a0a0a 50%, #050505 100%);
+  background:rgb(7, 6, 6);
   z-index: -2;
 }
 
+/* Custom gradient utilities for Tailwind */
+@layer utilities {
+  .bg-gradient-cyan-tl {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 255, 255, 0.025) 0%,
+      transparent 30%
+    );
+  }
+  
+  .bg-gradient-brown-tr {
+    background: linear-gradient(
+      225deg,
+      rgba(139, 69, 19, 0.075) 0%,
+      transparent 30%
+    );
+  }
+}
 
 
 /* Enhanced floating particles animation with multiple lines */
@@ -268,6 +285,61 @@ body::before {
   }
 }
 
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes techIconFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-1px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-1px) rotate(-0.5deg);
+  }
+}
+
+@keyframes techIconGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(97, 218, 251, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(97, 218, 251, 0.6));
+  }
+}
+
+@keyframes techIconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
@@ -286,6 +358,26 @@ rgb(221, 221, 221) 75%,
   -webkit-background-clip: text;
   color: transparent;
   animation: gradientFlow 6s linear infinite;
+}
+
+.animate-slide-in-bottom {
+  animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+.animate-tech-float {
+  animation: techIconFloat 4s ease-in-out infinite;
+}
+
+.animate-tech-glow {
+  animation: techIconGlow 2s ease-in-out infinite;
+}
+
+.animate-tech-pulse {
+  animation: techIconPulse 2s ease-in-out infinite;
 }
 
 /* Vignette Effect */

@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
               alt={tech}
               width={64}
               height={64}
-              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(97,218,251,0.3)]"
+              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(97,218,251,0.3)] hover:animate-spin"
             />
           );
         case 'web3.js':
@@ -38,7 +38,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
               alt={tech}
               width={64}
               height={64}
-              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(255,165,0,0.3)]"
+              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(255,165,0,0.3)] hover:animate-bounce"
             />
           );
         case 'next.js':
@@ -49,7 +49,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
               alt={tech}
               width={64}
               height={64}
-              className="w-16 h-16 flex-shrink-0 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+              className="w-16 h-16 flex-shrink-0 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] hover:animate-pulse"
             />
           );
         case 'tailwind':
@@ -60,7 +60,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
               alt={tech}
               width={64}
               height={64}
-              className="w-14 h-14 flex-shrink-0 drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]"
+              className="w-14 h-14 flex-shrink-0 drop-shadow-[0_0_8px_rgba(6,182,212,0.3)] hover:animate-pulse"
             />
           );
         case 'typescript':
@@ -71,7 +71,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
               alt={tech}
               width={64}
               height={64}
-              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(49,120,198,0.3)]"
+              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(49,120,198,0.3)] hover:animate-ping"
             />
           );
         case 'pinata':
@@ -81,7 +81,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
               alt={tech}
               width={64}
               height={64}
-              className="w-11 h-14 flex-shrink-0 drop-shadow-[0_0_8px_rgba(255,165,0,0.3)]"
+              className="w-11 h-14 flex-shrink-0 drop-shadow-[0_0_8px_rgba(255,165,0,0.3)] hover:animate-bounce"
             />
           );
       }
@@ -245,11 +245,15 @@ const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
             {project.technologies.map((tech, index) => (
               <div
                 key={index}
-                className="transition-all duration-200 hover:scale-105 group flex flex-col items-center justify-center gap-2"
+                className="transition-all duration-300 hover:scale-110 group flex flex-col items-center justify-center gap-2 animate-tech-float hover:animate-tech-pulse"
+                style={{ 
+                  animationDelay: `${index * 0.15}s`,
+                  animationDuration: `${3 + index * 0.2}s`
+                }}
                 title={tech}
               >
                 {getTechIcon(tech)}
-                <span className="text-xs font-medium text-gray-400 group-hover:text-gray-300 transition-colors duration-200 text-center">
+                <span className="text-xs font-medium text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-center">
                   {tech}
                 </span>
               </div>

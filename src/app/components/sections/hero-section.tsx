@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative flex justify-center items-center h-screen w-full overflow-hidden">
+    <section id="hero" className="relative flex justify-center items-center h-screen w-full overflow-visible">
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
