@@ -74,7 +74,6 @@ const ProjectsSection: React.FC = () => {
 
   return (
     <section id="projects" className="relative py-20 px-6 lg:px-8 overflow-visible">
-      
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ease-out ${
