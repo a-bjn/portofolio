@@ -192,6 +192,62 @@ const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
           );
       }
     }
+    
+    // For the Social Melody project, show specific icons
+    if (project.title.toLowerCase().includes('social melody')) {
+      switch (tech.toLowerCase()) {
+        case 'android studio':
+          return (
+            <Image
+              src="/android.png"
+              alt={tech}
+              width={64}
+              height={64}
+              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(164,255,175,0.3)] hover:animate-pulse"
+            />
+          );
+        case 'jetpack compose':
+          return (
+            <Image
+              src="/compose.png"
+              alt={tech}
+              width={64}
+              height={64}
+              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(0,150,136,0.3)] hover:animate-pulse"
+            />
+          );
+        case 'kotlin':
+          return (
+            <Image
+              src="/kotlin.png"
+              alt={tech}
+              width={64}
+              height={64}
+              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(127,62,255,0.3)] hover:animate-pulse"
+            />
+          );
+        case 'google maps api':
+          return (
+            <Image
+              src="/maps.png"
+              alt={tech}
+              width={64}
+              height={64}
+              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(66,133,244,0.3)] hover:animate-pulse"
+            />
+          );
+        case 'spotify api':
+          return (
+            <Image
+              src="/spotify.png"
+              alt={tech}
+              width={64}
+              height={64}
+              className="w-12 h-12 flex-shrink-0 drop-shadow-[0_0_8px_rgba(30,215,96,0.3)] hover:animate-pulse"
+            />
+          );
+      }
+    }
     // For other projects, don't show any icons until specified
     return null;
   };

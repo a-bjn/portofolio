@@ -59,16 +59,15 @@ const ProjectsSection: React.FC = () => {
       technologies: ["React", "Next.js", "TypeScript", "Tailwind"],
       githubUrl: "https://github.com/a-bjn/reparatii-tv-braila",
       liveUrl: "https://www.reparatiitvbraila.com/",
-      image: "/image.png"
+      image: "/reparatii.png"
     },
     {
       id: 4,
-      title: "Epic-Energize",
+      title: "Social Melody",
       description: "Epic-Energize is a fitness app with a comprehensive exercise database and rapidAPI integration, providing structured workouts.",
-      technologies: ["React", "Tailwind", "RapidAPI"],
-      githubUrl: "https://github.com/yourusername/epic-energize",
-      liveUrl: "https://epic-energize.vercel.app",
-      image: "/project-images/epic-energize.jpg"
+      technologies: ["Android Studio", "Jetpack Compose", "Kotlin", "Google Maps API", "Spotify API"],
+      githubUrl: "https://github.com/a-bjn/social-melody",
+      image: "/socialmelody.png"
     }
   ];
 
