@@ -75,7 +75,7 @@ const HeroSection: React.FC = () => {
               </a>
               
               <a 
-                href="https://linkedin.com/in/yourusername" 
+                href="https://www.linkedin.com/in/andrei-bejan/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r border-1 border-zinc-800 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
@@ -87,7 +87,7 @@ const HeroSection: React.FC = () => {
               </a>
               
               <a 
-                href="/Andrei_Bejan_Resume.pdf" 
+                href="/Andrei Bejan Resume.pdf" 
                 download
                 className="flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r border-1 border-zinc-800 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
               >
