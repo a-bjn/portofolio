@@ -87,7 +87,7 @@ const HeroSection: React.FC = () => {
               </a>
               
               <a 
-                href="/Andrei Bejan Resume.pdf" 
+                href="/Andrei Bejan CV.pdf" 
                 download
                 className="flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r border-1 border-zinc-800 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
               >
