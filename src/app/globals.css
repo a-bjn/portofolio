@@ -1,0 +1,458 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --accent-primary: #00ff88;
+  --accent-secondary: #0066ff;
+  --grid-color: rgba(255, 255, 255, 0.05);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #050505;
+    --foreground: #ededed;
+    --accent-primary: #00ff88;
+    --accent-secondary: #0066ff;
+    --grid-color: rgba(255, 255, 255, 0.03);
+  }
+}
+
+/* Programmer-themed dark background */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Dark gradient background with programming theme */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:rgb(7, 6, 6);
+  z-index: -2;
+}
+
+/* Custom gradient utilities for Tailwind */
+@layer utilities {
+  .bg-gradient-cyan-tl {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 255, 255, 0.025) 0%,
+      transparent 30%
+    );
+  }
+  
+  .bg-gradient-brown-tr {
+    background: linear-gradient(
+      225deg,
+      rgba(139, 69, 19, 0.075) 0%,
+      transparent 30%
+    );
+  }
+  
+  .bg-gradient-emerald-amber {
+    background: linear-gradient(
+      135deg,
+      rgb(16, 80, 58) 0%,
+      rgb(83, 58, 13) 100%
+    );
+  }
+}
+
+
+/* Enhanced floating particles animation with multiple lines */
+.programming-particles,
+.programming-particles-2,
+.programming-particles-3,
+.programming-particles-4 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Line 1: Programming symbols - Top */
+.programming-particles::before {
+  content: '{ } < > / * + = ; ( ) [ ] . , : " \' ` ~ # $ % & | \\ ^ @ ! ? { } < > / * +';
+  position: absolute;
+  top: 15%;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  color: rgba(0, 255, 136, 0.4);
+  white-space: nowrap;
+  animation: floatCode 35s linear infinite;
+  transform: translateX(-100%);
+}
+
+/* Line 2: Code snippets - Middle */
+.programming-particles::after {
+  content: 'function() { return true; } const dev = "awesome"; if (coding) { enjoy(); } while(learning) { grow(); }';
+  position: absolute;
+  top: 45%;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  color: rgba(0, 102, 255, 0.35);
+  white-space: nowrap;
+  animation: floatCodeReverse 28s linear infinite;
+  transform: translateX(100%);
+}
+
+/* Line 3: More symbols - Upper third */
+.programming-particles-2::before {
+  content: '= > < / \\ * + - _ | & % $ # @ ! ? . , ; : \' " ` ~ ^ ( ) [ ] { } = > < /';
+  position: absolute;
+  top: 25%;
+  font-family: 'Courier New', monospace;
+  font-size: 17px;
+  color: rgba(136, 0, 255, 0.3);
+  white-space: nowrap;
+  animation: floatCode 40s linear infinite;
+  animation-delay: -10s;
+  transform: translateX(-100%);
+}
+
+/* Line 4: More code - Lower middle */
+.programming-particles-2::after {
+  content: 'class Developer { constructor() { this.awesome = true; } } => console.log("Hello World!");';
+  position: absolute;
+  top: 55%;
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+  color: rgba(255, 136, 0, 0.3);
+  white-space: nowrap;
+  animation: floatCodeReverse 32s linear infinite;
+  animation-delay: -8s;
+  transform: translateX(100%);
+}
+
+/* Line 5: Variable declarations - Lower */
+.programming-particles-3::before {
+  content: 'let code = "beautiful"; var skills = ["js", "ts", "react"]; const passion = Infinity;';
+  position: absolute;
+  top: 70%;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: rgba(0, 255, 136, 0.25);
+  white-space: nowrap;
+  animation: floatCode 26s linear infinite;
+  animation-delay: -15s;
+  transform: translateX(-100%);
+}
+
+/* Line 6: More symbols - Very top */
+.programming-particles-3::after {
+  content: '/* commenting life */ // TODO: be awesome ⚡ ⭐ 🚀 💻 ⚙️ 🔧 📱 🌐 🎯';
+  position: absolute;
+  top: 5%;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  color: rgba(255, 0, 136, 0.3);
+  white-space: nowrap;
+  animation: floatCodeReverse 38s linear infinite;
+  animation-delay: -5s;
+  transform: translateX(100%);
+}
+
+/* Line 7: More complex code - Bottom */
+.programming-particles-4::before {
+  content: 'async function buildDreams() { await learn(); return success(); } export default Developer;';
+  position: absolute;
+  top: 80%;
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+  color: rgba(0, 255, 255, 0.25);
+  white-space: nowrap;
+  animation: floatCode 30s linear infinite;
+  animation-delay: -20s;
+  transform: translateX(-100%);
+}
+
+/* Line 8: Final symbols - Mid */
+.programming-particles-4::after {
+  content: '💡 git commit -m "making magic happen" && git push origin main 🎨 ✨ 🔮';
+  position: absolute;
+  top: 35%;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: rgba(255, 255, 0, 0.3);
+  white-space: nowrap;
+  animation: floatCodeReverse 34s linear infinite;
+  animation-delay: -12s;
+  transform: translateX(100%);
+}
+
+/* Responsive scaling for larger screens */
+@media (min-width: 768px) {
+  /* Tablet and up - increase particle sizes */
+  .programming-particles::before { font-size: 20px; }
+  .programming-particles::after { font-size: 18px; }
+  .programming-particles-2::before { font-size: 19px; }
+  .programming-particles-2::after { font-size: 17px; }
+  .programming-particles-3::before { font-size: 16px; }
+  .programming-particles-3::after { font-size: 18px; }
+  .programming-particles-4::before { font-size: 17px; }
+  .programming-particles-4::after { font-size: 16px; }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop and up - further increase */
+  .programming-particles::before { font-size: 22px; }
+  .programming-particles::after { font-size: 20px; }
+  .programming-particles-2::before { font-size: 21px; }
+  .programming-particles-2::after { font-size: 19px; }
+  .programming-particles-3::before { font-size: 18px; }
+  .programming-particles-3::after { font-size: 20px; }
+  .programming-particles-4::before { font-size: 19px; }
+  .programming-particles-4::after { font-size: 18px; }
+}
+
+@media (min-width: 1440px) {
+  /* Large desktop - maximize readability */
+  .programming-particles::before { font-size: 24px; }
+  .programming-particles::after { font-size: 22px; }
+  .programming-particles-2::before { font-size: 23px; }
+  .programming-particles-2::after { font-size: 21px; }
+  .programming-particles-3::before { font-size: 20px; }
+  .programming-particles-3::after { font-size: 22px; }
+  .programming-particles-4::before { font-size: 21px; }
+  .programming-particles-4::after { font-size: 20px; }
+}
+
+@media (min-width: 1920px) {
+  /* Extra large screens */
+  .programming-particles::before { font-size: 26px; }
+  .programming-particles::after { font-size: 24px; }
+  .programming-particles-2::before { font-size: 25px; }
+  .programming-particles-2::after { font-size: 23px; }
+  .programming-particles-3::before { font-size: 22px; }
+  .programming-particles-3::after { font-size: 24px; }
+  .programming-particles-4::before { font-size: 23px; }
+  .programming-particles-4::after { font-size: 22px; }
+}
+
+/* Terminal cursor blink effect */
+.terminal-cursor {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  width: 8px;
+  height: 16px;
+  background: var(--accent-primary);
+  animation: blink 1s infinite;
+  z-index: 1;
+}
+
+.terminal-cursor::before {
+  content: 'dev@portfolio:~$ ';
+  position: absolute;
+  right: 15px;
+  top: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--accent-primary);
+  opacity: 0.6;
+}
+
+/* Animations */
+@keyframes circuitPulse {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg); 
+    opacity: 0.7;
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  20% { 
+    transform: translate(-2px, 1px) rotate(0.5deg); 
+    opacity: 0.9;
+    filter: brightness(1.1) hue-rotate(5deg);
+  }
+  40% { 
+    transform: translate(1px, -2px) rotate(-0.3deg); 
+    opacity: 0.8;
+    filter: brightness(0.95) hue-rotate(-3deg);
+  }
+  60% { 
+    transform: translate(-1px, 2px) rotate(0.2deg); 
+    opacity: 1;
+    filter: brightness(1.2) hue-rotate(8deg);
+  }
+  80% { 
+    transform: translate(2px, -1px) rotate(-0.1deg); 
+    opacity: 0.75;
+    filter: brightness(1.05) hue-rotate(-2deg);
+  }
+}
+
+@keyframes floatCode {
+  0% { transform: translateX(-100%) translateY(0px); opacity: 0; }
+  5% { opacity: 0.4; }
+  25% { transform: translateX(-50vw) translateY(-2px); }
+  50% { transform: translateX(0vw) translateY(0px); }
+  75% { transform: translateX(50vw) translateY(2px); }
+  95% { opacity: 0.4; }
+  100% { transform: translateX(100vw) translateY(0px); opacity: 0; }
+}
+
+@keyframes floatCodeReverse {
+  0% { transform: translateX(100vw) translateY(0px); opacity: 0; }
+  5% { opacity: 0.35; }
+  25% { transform: translateX(50vw) translateY(2px); }
+  50% { transform: translateX(0vw) translateY(0px); }
+  75% { transform: translateX(-50vw) translateY(-2px); }
+  95% { opacity: 0.35; }
+  100% { transform: translateX(-100%) translateY(0px); opacity: 0; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes techIconFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-1px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-1px) rotate(-0.5deg);
+  }
+}
+
+@keyframes techIconGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(97, 218, 251, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(97, 218, 251, 0.6));
+  }
+}
+
+@keyframes techIconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-gradient-flow {
+  background: linear-gradient(
+    90deg,
+#535966 0%,
+    #9ca3af 25%,
+    #d1d5db 50%,
+rgb(221, 221, 221) 75%,
+    #535966 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientFlow 6s linear infinite;
+}
+
+.animate-slide-in-bottom {
+  animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+.animate-tech-float {
+  animation: techIconFloat 4s ease-in-out infinite;
+}
+
+.animate-tech-glow {
+  animation: techIconGlow 2s ease-in-out infinite;
+}
+
+.animate-tech-pulse {
+  animation: techIconPulse 2s ease-in-out infinite;
+}
+
+/* Vignette Effect */
+.vignette {
+  background: radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+/* Vignette Effect Inside Picture */
+.vignette-inner {
+  background: radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* Custom radial gradient utility for subtle backgrounds */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+
+
+
+
