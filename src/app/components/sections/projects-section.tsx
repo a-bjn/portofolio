@@ -49,7 +49,7 @@ const ProjectsSection: React.FC = () => {
       description: "Sudexpert is a platform that aims to reach a broader audience to sell their welding products.",
       technologies: ["React", "Next.js", "TypeScript", "Tailwind", "EmailJS"],
       githubUrl: "https://github.com/a-bjn/sudexpert",
-      liveUrl: "https://www.sudexpertbraila.ro/",
+      liveUrl: "https://www.sudexpertbraila.com/",
       image: "/sudexpert.png"
     },
     {
