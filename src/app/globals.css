@@ -64,6 +64,14 @@ body::before {
     );
   }
   
+  .bg-gradient-brown-br {
+    background: linear-gradient(
+      315deg,
+      rgba(139, 69, 19, 0.1) 0%,
+      transparent 30%
+    );
+  }
+  
   .bg-gradient-emerald-amber {
     background: linear-gradient(
       135deg,
@@ -397,6 +405,17 @@ body::before {
   }
 }
 
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
@@ -435,6 +454,10 @@ rgb(221, 221, 221) 75%,
 
 .animate-tech-pulse {
   animation: techIconPulse 2s ease-in-out infinite;
+}
+
+.animate-pulse-scale {
+  animation: pulseScale 2s ease-in-out infinite;
 }
 
 /* Vignette Effect */
