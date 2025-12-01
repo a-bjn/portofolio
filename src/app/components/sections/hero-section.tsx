@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
                 }`}
                 style={{ transitionDelay: '0.2s' }}
               >
-                Hello, I'm Andrei Bejan
+                Hello, I&apos;m Andrei Bejan
               </p>
                 <h1 
                  className={`text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight transition-all duration-1000 ease-out ${

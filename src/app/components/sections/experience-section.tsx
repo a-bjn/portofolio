@@ -6,7 +6,7 @@ const ExperienceSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
-  const [allExpanded, setAllExpanded] = useState(true);
+  const allExpanded = true;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -15,7 +15,7 @@ const ExperienceSection: React.FC = () => {
           if (entry.isIntersecting) {
             setIsVisible(true);
             // Stagger card animations
-            experienceData.forEach((_, index) => {
+            [0, 1].forEach((index) => {
               setTimeout(() => {
                 setVisibleCards(prev => [...prev, index]);
               }, index * 200);
