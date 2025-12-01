@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,17 +83,16 @@ export default function Header() {
           <div className="flex items-center gap-3">
             {/* Mobile Menu Button */}
             <button
-              onClick={() => {
-                const nav = document.getElementById('mobile-nav');
-                if (nav) {
-                  nav.classList.toggle('hidden');
-                }
-              }}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2.5 text-gray-400 hover:text-gray-200 transition-colors"
               aria-label="Toggle menu"
             >
               <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M4 6h16M4 12h16M4 18h16" />
+                {isMobileMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
 
@@ -112,37 +112,46 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <div
-          id="mobile-nav"
-          className="hidden md:hidden mt-4 p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10"
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+          }`}
         >
-          <nav className="flex flex-col gap-2">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  scrollToSection(item.id);
-                  document.getElementById('mobile-nav')?.classList.add('hidden');
+          <div className="p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10">
+            <nav className="flex flex-col gap-2">
+              {navItems.map((item, index) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    scrollToSection(item.id);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`px-5 py-3 rounded-lg text-left text-base font-medium transition-all duration-200 ${
+                    activeSection === item.id
+                      ? 'bg-white/5 text-gray-200'
+                      : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
+                  }`}
+                  style={{
+                    animation: isMobileMenuOpen ? `slideIn 0.3s ease-out ${index * 0.1}s both` : 'none'
+                  }}
+                >
+                  {item.label}
+                </button>
+              ))}
+              <a
+                href="/Andrei Bejan CV.pdf"
+                download
+                className="sm:hidden flex items-center justify-center gap-2.5 px-5 py-3 mt-2 rounded-lg bg-white/5 border border-white/10 text-gray-200 text-base font-medium hover:bg-white/10 transition-all duration-200"
+                style={{
+                  animation: isMobileMenuOpen ? 'slideIn 0.3s ease-out 0.3s both' : 'none'
                 }}
-                className={`px-5 py-3 rounded-lg text-left text-base font-medium transition-all duration-200 ${
-                  activeSection === item.id
-                    ? 'bg-white/5 text-gray-200'
-                    : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
-                }`}
               >
-                {item.label}
-              </button>
-            ))}
-            <a
-              href="/Andrei Bejan CV.pdf"
-              download
-              className="sm:hidden flex items-center justify-center gap-2.5 px-5 py-3 mt-2 rounded-lg bg-white/5 border border-white/10 text-gray-200 text-base font-medium hover:bg-white/10 transition-all duration-200"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              <span>Download Resume</span>
-            </a>
-          </nav>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span>Download Resume</span>
+              </a>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
