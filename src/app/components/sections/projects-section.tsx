@@ -14,7 +14,7 @@ const ProjectsSection: React.FC = () => {
           if (entry.isIntersecting) {
             setIsVisible(true);
             // Animate projects one by one
-            projects.forEach((_, index) => {
+            [0, 1, 2, 3].forEach((index) => {
               setTimeout(() => {
                 setVisibleProjects(prev => [...prev, index]);
               }, index * 200);
