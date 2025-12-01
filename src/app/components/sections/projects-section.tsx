@@ -75,15 +75,15 @@ const ProjectsSection: React.FC = () => {
     <section id="projects" className="relative py-20 px-6 lg:px-8 overflow-visible">
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ease-out ${
+        <div className={`text-center mb-10 lg:mb-20 transition-all duration-1000 ease-out ${
           isVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 lg:mb-6">
             <span className="animate-gradient-flow">Featured Projects</span>
           </h2>
-          <p className="text-2xl text-gray-400 font-light max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-400 font-light max-w-3xl mx-auto px-4">
             Here are some of my recent projects showcasing my skills and experience in full-stack development.
           </p>
         </div>
