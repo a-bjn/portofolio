@@ -5,10 +5,10 @@ import ProjectsSection from "./components/sections/projects-section";
 export default function Home() {
   return (
     <main className="relative z-0 pt-20">
-      {/* Cyan gradient from top-left (135deg) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/[0.025] via-cyan-500/[0.008] to-transparent pointer-events-none"></div>
-      {/* Brown gradient from top-right (225deg) */}
-      <div className="absolute inset-0 bg-gradient-to-bl from-amber-900/[0.075] via-amber-900/[0.025] to-transparent pointer-events-none"></div>
+      {/* Cyan gradient from top-left, transitioning through black */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/[0.045] via-black/[0.5] to-transparent pointer-events-none"></div>
+      {/* Brown gradient from bottom-right */}
+      <div className="absolute inset-0 bg-gradient-to-tl from-amber-400/[0.015] via-amber-900/[0.035] to-transparent pointer-events-none"></div>
       <HeroSection />
       <ExperienceSection />
       <ProjectsSection />
