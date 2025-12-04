@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="relative z-0 pt-20">
       {/* Cyan gradient: from top on mobile, from top-left on desktop, transitioning through black */}
-      <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-br from-cyan-400/[0.045] via-black/[0.5] to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-br from-cyan-400/[0.04] md:from-cyan-400/[0.045] via-black/[0.5] to-transparent pointer-events-none"></div>
       {/* Brown gradient: from bottom on mobile, from bottom-right on desktop */}
       <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-tl from-amber-400/[0.015] via-amber-900/[0.035] to-transparent pointer-events-none"></div>
       <HeroSection />
