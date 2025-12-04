@@ -111,7 +111,7 @@ const ExperienceSection: React.FC = () => {
           {/* Connecting Line */}
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-gray-700 to-transparent hidden md:block"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-6 md:space-y-8 lg:space-y-12">
             {experienceData.map((experience, index) => (
               <div
                 key={experience.id}
@@ -131,10 +131,12 @@ const ExperienceSection: React.FC = () => {
                 {/* Card */}
                 <div className="md:ml-20 group">
                   <div 
-                    className={`relative bg-zinc-900/50 backdrop-blur-sm border ${experience.borderColor} rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/50 ${
+                    className={`relative bg-zinc-900/50 backdrop-blur-sm border ${experience.borderColor} rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] ${
                       isMobile ? 'cursor-pointer' : ''
                     } ${
-                      expandedCard === index ? 'ring-2 ring-white/10' : ''
+                      expandedCard === index 
+                        ? 'shadow-[0_-10px_20px_-5px_rgba(34,211,238,0.05),-10px_0_20px_-5px_rgba(34,211,238,0.05),0_10px_20px_-5px_rgba(251,191,36,0.05),10px_0_20px_-5px_rgba(251,191,36,0.05)]' 
+                        : 'hover:shadow-2xl hover:shadow-black/50'
                     }`}
                     onClick={() => {
                       // Only allow expansion on mobile
@@ -155,7 +157,7 @@ const ExperienceSection: React.FC = () => {
                       <div className={`absolute inset-0 bg-gradient-to-r ${experience.color} blur-xl`}></div>
                     </div>
 
-                    <div className="relative p-8">
+                    <div className="relative md:p-8 p-4">
                       {/* Header */}
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
                         <div className="flex-1">
