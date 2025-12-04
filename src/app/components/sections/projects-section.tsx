@@ -89,7 +89,7 @@ const ProjectsSection: React.FC = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-4 md:gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {projects.map((project, index) => (
             <div
               key={project.id}

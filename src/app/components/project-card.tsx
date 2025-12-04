@@ -310,12 +310,12 @@ const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
         <div className="absolute top-80 left-0 right-0 h-6 bg-gradient-to-b from-zinc-800/20 to-transparent"></div>
       )}
 
-      <div className="relative z-10 p-8 flex flex-col flex-1">
+      <div className="relative z-10 md:p-8 p-4 flex flex-col flex-1">
         {/* Project Title and Expand Button */}
         <div className="flex items-start justify-between gap-4 mb-4">
           <h3 className="text-2xl font-bold text-gray-100 group-hover:text-emerald-400 transition-colors duration-300 flex-1">
-            {project.title}
-          </h3>
+          {project.title}
+        </h3>
           {/* Show expansion arrow only on mobile */}
           <div className={`md:hidden p-2 rounded-lg bg-zinc-800/50 ${isMobile ? 'group-hover:bg-zinc-700/50' : ''} text-gray-400 ${isMobile ? 'group-hover:text-white' : ''} transition-all duration-200 flex-shrink-0 ${
             isExpanded ? 'rotate-180' : ''
