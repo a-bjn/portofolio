@@ -11,7 +11,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@material-tailwind/react": "^2.1.10",
-    "next": "15.4.4",
+    "next": "15.4.8",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-vertical-timeline-component": "^3.5.3",
@@ -25,7 +25,7 @@
     "@types/react-dom": "^19",
     "@types/react-vertical-timeline-component": "^3.3.6",
     "eslint": "^9",
-    "eslint-config-next": "15.4.4",
+    "eslint-config-next": "15.4.8",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
