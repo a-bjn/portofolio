@@ -118,19 +118,21 @@ const ProjectsSection: React.FC = () => {
             return (
               <div
                 key={project.id}
-                className={`group/project relative grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center transition-all duration-700 ease-out ${
+                className={`group/project relative rounded-2xl border border-white/[0.08] bg-white/[0.02] p-4 sm:p-6 lg:p-0 lg:rounded-none lg:border-0 lg:bg-transparent transition-all duration-700 ease-out ${
                   isCardVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 }`}
               >
-                {/* Subtle row background — strongest on content side, fades out at the far edge */}
+                {/* Subtle row background — inside card bounds */}
                 <div
-                  className="absolute inset-0 -z-10 rounded-3xl pointer-events-none"
+                  className="absolute inset-0 -z-10 rounded-2xl lg:rounded-3xl pointer-events-none"
                   style={{
                     background: isReversed
                       ? "linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(160,160,170,0.1) 25%, rgba(160,160,170,0.08) 55%, rgba(160,160,170,0.03) 100%)"
                       : "linear-gradient(to right, rgba(160,160,170,0.03) 0%, rgba(160,160,170,0.08) 45%, rgba(160,160,170,0.1) 75%, rgba(255,255,255,0) 100%)",
                   }}
                 />
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-[2]">
                 {/* Image side */}
                 <div
                   className={`relative z-[2] lg:col-span-7 transition-transform duration-500 ease-out will-change-transform group-hover/project:scale-[1.008] lg:group-hover/project:scale-[1.015] ${
@@ -226,13 +228,17 @@ const ProjectsSection: React.FC = () => {
                   </div>
 
                   {/* Actions */}
-                  <div className={`flex flex-wrap gap-3 ${isReversed ? "lg:justify-end" : ""}`}>
+                  <div
+                    className={`flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full max-w-full ${
+                      isReversed ? "lg:justify-end" : ""
+                    }`}
+                  >
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/btn relative inline-flex items-center gap-2 px-4 py-2 lg:px-5 lg:py-2.5 rounded-lg bg-white/[0.06] border border-white/[0.1] hover:bg-white/[0.1] hover:border-white/[0.2] text-sm text-gray-100 font-medium transition-all duration-300"
+                        className="group/btn relative inline-flex items-center justify-center gap-2 min-h-[44px] px-4 py-2.5 lg:px-5 lg:py-2.5 rounded-lg bg-white/[0.06] border border-white/[0.1] hover:bg-white/[0.1] hover:border-white/[0.2] text-sm text-gray-100 font-medium transition-all duration-300 w-full sm:w-auto shrink-0"
                       >
                         <span>View Live</span>
                         <svg
@@ -250,7 +256,7 @@ const ProjectsSection: React.FC = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 lg:px-5 lg:py-2.5 rounded-lg text-sm text-gray-400 hover:text-gray-100 font-medium transition-colors duration-300"
+                      className="inline-flex items-center justify-center gap-2 min-h-[44px] px-4 py-2.5 lg:px-5 lg:py-2.5 rounded-lg text-sm text-gray-400 hover:text-gray-100 font-medium transition-colors duration-300 border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/[0.12] w-full sm:w-auto shrink-0"
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -259,10 +265,11 @@ const ProjectsSection: React.FC = () => {
                     </a>
                   </div>
                 </div>
+                </div>
 
-                {/* Speed trails — full row, soft mask (no hard clip at column boundary) */}
+                {/* Speed trails — desktop only; sibling of grid, not a grid cell */}
                 <div
-                  className="hidden lg:block absolute inset-0 z-[1] pointer-events-none overflow-visible opacity-0 transition-opacity duration-500 group-hover/project:opacity-100"
+                  className="hidden lg:block absolute inset-0 z-[1] pointer-events-none overflow-visible opacity-0 transition-opacity duration-500 group-hover/project:opacity-100 rounded-3xl"
                   style={{
                     WebkitMaskImage: isReversed
                       ? "linear-gradient(to left, transparent 0%, rgba(0,0,0,0.2) 8%, rgba(0,0,0,0.9) 16%, #000 24%, #000 91%, transparent 100%)"
