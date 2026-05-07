@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative flex justify-center items-center lg:h-[80vh] w-full overflow-visible px-6 lg:px-8">
+    <section id="hero" className="relative flex justify-center items-center w-full overflow-visible px-6 lg:px-8 pb-28 sm:pb-32 lg:min-h-[80vh] lg:h-[80vh] lg:pb-0">
       <div className="relative z-10 max-w-7xl mx-auto w-full pt-16 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Content */}
@@ -35,16 +35,16 @@ const HeroSection: React.FC = () => {
                  }`}
                  style={{ transitionDelay: '0.4s' }}
                >
-                 <span className="bg-gradient-to-r from-gray-600 via-gray-400 via-gray-300 to-gray-600 bg-[length:200%_100%] bg-clip-text text-transparent animate-gradient-flow">
-                   Full-Stack Engineer
+                 <span className="bg-gradient-to-r from-gray-500 via-gray-200 via-white to-gray-500 bg-[length:200%_100%] bg-clip-text text-transparent animate-gradient-flow">
+                   Fullstack Engineer
                  </span>
                  <br />
-                 <span className="bg-gradient-to-r from-gray-600 via-gray-400 via-gray-300 to-gray-600 bg-[length:200%_100%] bg-clip-text text-transparent animate-gradient-flow">
+                 <span className="bg-gradient-to-r from-gray-500 via-gray-200 via-white to-gray-500 bg-[length:200%_100%] bg-clip-text text-transparent animate-gradient-flow">
                    Next.js / Spring Boot
                  </span>
                </h1>
               <p 
-                className={`text-lg sm:text-xl lg:text-2xl leading-relaxed text-gray-300 font-base max-w-2xl mx-auto lg:mx-0 transition-all duration-1000 ease-out ${
+                className={`text-lg sm:text-xl lg:text-2xl leading-relaxed text-gray-500 font-normal max-w-2xl mx-auto lg:mx-0 transition-all duration-1000 ease-out ${
                   isVisible 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-8'
@@ -138,17 +138,45 @@ const HeroSection: React.FC = () => {
                 style={{ transitionDelay: '1.2s' }}
               >
                 <h3 className="text-4xl text-gray-200 font-bold">Andrei Bejan</h3>
-                <p className="text-2xl text-gray-400 mb-4">Full Stack Developer</p>
+                <p className="text-2xl text-gray-400 mb-4">Fullstack Developer</p>
                 <div className="flex items-center text-xl gap-2 text-gray-300">
                   <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
-                  <span>Cluj-Napoca, Romania</span>
+                  <span>Bucharest, Romania</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div
+        className={`absolute bottom-5 sm:bottom-8 lg:bottom-10 left-0 right-0 z-20 flex justify-center pointer-events-none transition-all duration-1000 ease-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }`}
+        style={{ transitionDelay: "1s" }}
+      >
+        <a
+          href="#about"
+          className="pointer-events-auto group flex flex-col items-center gap-1.5 rounded-xl px-4 py-2 text-gray-500 hover:text-gray-300 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/25 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
+          aria-label="Scroll to About section"
+        >
+          <span className="text-[10px] uppercase tracking-[0.22em] font-medium text-gray-500 group-hover:text-gray-400">
+            Scroll
+          </span>
+          <span className="animate-scroll-hint inline-flex" aria-hidden>
+            <svg
+              className="w-5 h-5 text-gray-400 group-hover:text-gray-200 transition-colors"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </a>
       </div>
     </section>
   );
