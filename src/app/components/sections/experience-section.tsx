@@ -30,7 +30,7 @@ const ExperienceSection: React.FC = () => {
           if (entry.isIntersecting) {
             setIsVisible(true);
             // Stagger card animations
-            [0, 1].forEach((index) => {
+            [0, 1, 2].forEach((index) => {
               setTimeout(() => {
                 setVisibleCards(prev => [...prev, index]);
               }, index * 200);
@@ -52,17 +52,17 @@ const ExperienceSection: React.FC = () => {
   const experienceData = [
     {
       id: 1,
-      position: "Full-Stack Developer Intern",
-      company: ".msg Systems",
-      location: "Cluj-Napoca, Romania",
-      period: "Oct 2023 - Jan 2024",
-      year: "2023",
-      description: "They develop innovative software products and human-inspired solutions",
-      technologies: ["ReactJS", "TypeScript", "Tailwind CSS", "Spring", "JWT", "RESTful API"],
+      position: "Frontend Developer",
+      company: "Electronic Professional Design",
+      location: "Brăila, Romania",
+      period: "Sep 2025 - Dec 2025",
+      year: "2025",
+      description: "Electronic Professional Design provides specialized digital and business solutions.",
+      technologies: ["React", "Next.js", "Tailwind CSS", "JWT", "HTTP-only Cookies", "Stripe"],
       achievements: [
-        "Developed an internal bug tracking platform using React (TypeScript) and Spring Boot.",
-        "Implemented secure user authentication with JWT and fine-grained role-based access control.",
-        "Delivered a fully functional MVP adopted by internal QA teams, improving issue tracking efficiency by 40%."
+        "Built responsive applications with React, Next.js, and Tailwind CSS.",
+        "Implemented authentication using JWT, HTTP-only cookies, and role-based access control.",
+        "Integrated Stripe payments, developing checkout and transaction flows."
       ],
       color: "from-zinc-700/10 to-zinc-600/10",
       borderColor: "border-zinc-700/20",
@@ -71,6 +71,25 @@ const ExperienceSection: React.FC = () => {
     },
     {
       id: 2,
+      position: "Fullstack Developer Intern",
+      company: ".msg Systems",
+      location: "Cluj-Napoca, Romania",
+      period: "Oct 2023 - Jan 2024",
+      year: "2023",
+      description: "They develop innovative software products and human-inspired solutions.",
+      technologies: ["ReactJS", "TypeScript", "Tailwind CSS", "Spring", "JWT", "RESTful API"],
+      achievements: [
+        "Developed an internal bug tracking platform using React (TypeScript) and Spring Boot.",
+        "Implemented secure user authentication with JWT and role-based access control.",
+        "Delivered a fully functional MVP adopted by internal QA teams."
+      ],
+      color: "from-zinc-700/10 to-zinc-600/10",
+      borderColor: "border-zinc-700/20",
+      iconBg: "bg-zinc-700/10",
+      iconColor: "text-zinc-400"
+    },
+    {
+      id: 3,
       position: "Android Developer Intern",
       company: "Yopeso",
       location: "Cluj-Napoca, Romania",
@@ -163,15 +182,15 @@ const ExperienceSection: React.FC = () => {
                         <div className="flex-1">
                           <div className="flex items-start gap-4 mb-3">
                             <div className={`${experience.iconBg} ${experience.iconColor} p-3 rounded-xl group-hover:scale-110 transition-transform duration-300`}>
-                              {experience.id === 1 ? (
-                                // Code/Terminal icon for Full-Stack Developer
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                  <path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                              ) : (
+                              {experience.position.toLowerCase().includes('android') ? (
                                 // Smartphone icon for Android Developer
                                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                   <path d="M17 2H7c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H7V4h10v16zm-5-1c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1z"/>
+                                </svg>
+                              ) : (
+                                // Code/Terminal icon for web development roles
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                  <path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                               )}
                             </div>
