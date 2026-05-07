@@ -16,6 +16,12 @@
 }
 
 /* Programmer-themed dark background */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -47,7 +53,7 @@ body {
   top: 15%;
   font-family: 'Courier New', monospace;
   font-size: 18px;
-  color: rgba(0, 255, 136, 0.7);
+  color: rgba(0, 255, 136, 0.55);
   white-space: nowrap;
   animation: floatCode 35s linear infinite;
   transform: translateX(-100%);
@@ -60,7 +66,7 @@ body {
   top: 45%;
   font-family: 'Courier New', monospace;
   font-size: 16px;
-  color: rgba(0, 102, 255, 0.65);
+  color: rgba(0, 102, 255, 0.50);
   white-space: nowrap;
   animation: floatCodeReverse 28s linear infinite;
   transform: translateX(100%);
@@ -73,7 +79,7 @@ body {
   top: 25%;
   font-family: 'Courier New', monospace;
   font-size: 17px;
-  color: rgba(136, 0, 255, 0.6);
+  color: rgba(136, 0, 255, 0.48);
   white-space: nowrap;
   animation: floatCode 40s linear infinite;
   animation-delay: -10s;
@@ -87,7 +93,7 @@ body {
   top: 55%;
   font-family: 'Courier New', monospace;
   font-size: 15px;
-  color: rgba(255, 136, 0, 0.6);
+  color: rgba(255, 136, 0, 0.5);
   white-space: nowrap;
   animation: floatCodeReverse 32s linear infinite;
   animation-delay: -8s;
@@ -101,7 +107,7 @@ body {
   top: 70%;
   font-family: 'Courier New', monospace;
   font-size: 14px;
-  color: rgba(0, 255, 136, 0.55);
+  color: rgba(0, 255, 136, 0.46);
   white-space: nowrap;
   animation: floatCode 26s linear infinite;
   animation-delay: -15s;
@@ -115,7 +121,7 @@ body {
   top: 5%;
   font-family: 'Courier New', monospace;
   font-size: 16px;
-  color: rgba(255, 0, 136, 0.6);
+  color: rgba(255, 0, 136, 0.5);
   white-space: nowrap;
   animation: floatCodeReverse 38s linear infinite;
   animation-delay: -5s;
@@ -129,7 +135,7 @@ body {
   top: 80%;
   font-family: 'Courier New', monospace;
   font-size: 15px;
-  color: rgba(0, 255, 255, 0.55);
+  color: rgba(0, 255, 255, 0.45);
   white-space: nowrap;
   animation: floatCode 30s linear infinite;
   animation-delay: -20s;
@@ -143,7 +149,7 @@ body {
   top: 35%;
   font-family: 'Courier New', monospace;
   font-size: 14px;
-  color: rgba(255, 255, 0, 0.6);
+  color: rgba(255, 255, 0, 0.52);
   white-space: nowrap;
   animation: floatCodeReverse 34s linear infinite;
   animation-delay: -12s;
@@ -253,21 +259,21 @@ body {
 
 @keyframes floatCode {
   0% { transform: translateX(-100%) translateY(0px); opacity: 0; }
-  5% { opacity: 0.7; }
+  5% { opacity: 0.55; }
   25% { transform: translateX(-50vw) translateY(-2px); }
   50% { transform: translateX(0vw) translateY(0px); }
   75% { transform: translateX(50vw) translateY(2px); }
-  95% { opacity: 0.7; }
+  95% { opacity: 0.55; }
   100% { transform: translateX(100vw) translateY(0px); opacity: 0; }
 }
 
 @keyframes floatCodeReverse {
   0% { transform: translateX(100vw) translateY(0px); opacity: 0; }
-  5% { opacity: 0.65; }
+  5% { opacity: 0.5; }
   25% { transform: translateX(50vw) translateY(2px); }
   50% { transform: translateX(0vw) translateY(0px); }
   75% { transform: translateX(-50vw) translateY(-2px); }
-  95% { opacity: 0.65; }
+  95% { opacity: 0.5; }
   100% { transform: translateX(-100%) translateY(0px); opacity: 0; }
 }
 
@@ -371,6 +377,68 @@ body {
   }
 }
 
+@keyframes skillPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-15deg) translateY(20px);
+    filter: blur(6px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08) rotate(2deg) translateY(-4px);
+    filter: blur(0px);
+  }
+  75% {
+    transform: scale(0.97) rotate(-1deg) translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0px);
+    filter: blur(0px);
+  }
+}
+
+@keyframes skillIconBounce {
+  0% {
+    transform: scale(0) rotate(-20deg);
+  }
+  40% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  60% {
+    transform: scale(0.9) rotate(-3deg);
+  }
+  80% {
+    transform: scale(1.05) rotate(1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes skillNameSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollHint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
@@ -403,6 +471,17 @@ body {
   animation: pulseScale 2s ease-in-out infinite;
 }
 
+.animate-scroll-hint {
+  animation: scrollHint 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-hint {
+    animation: none;
+    opacity: 0.65;
+  }
+}
+
 /* Vignette Effect */
 .vignette {
   background: radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.4) 100%);
@@ -416,6 +495,42 @@ body {
 /* Custom radial gradient utility for subtle backgrounds */
 .bg-gradient-radial {
   background-image: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Speed trails — left to right (used when image is on the left) */
+@keyframes speedTrail {
+  0% {
+    transform: translateX(-165%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(165%);
+    opacity: 0;
+  }
+}
+
+/* Speed trails — right to left (used when image is on the right) */
+@keyframes speedTrailReverse {
+  0% {
+    transform: translateX(165%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-165%);
+    opacity: 0;
+  }
 }
 
 

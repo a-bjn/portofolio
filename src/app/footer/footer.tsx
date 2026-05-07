@@ -9,17 +9,32 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-gray-200">Andrei Bejan</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Full-Stack Engineer specializing in Next.js and Spring Boot. Building scalable web applications with modern technologies.
+              Fullstack Engineer specializing in Next.js and Spring Boot. Building scalable web applications with modern technologies.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-gray-200">Quick Links</h4>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
               <li>
                 <a href="#hero" className="text-gray-400 hover:text-white transition-colors text-sm">
                   Home
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#education" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  Education
+                </a>
+              </li>
+              <li>
+                <a href="#skills" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  Skills
                 </a>
               </li>
               <li>
@@ -30,6 +45,11 @@ export default function Footer() {
               <li>
                 <a href="#projects" className="text-gray-400 hover:text-white transition-colors text-sm">
                   Projects
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  Contact
                 </a>
               </li>
             </ul>

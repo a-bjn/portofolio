@@ -9,7 +9,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       // Detect active section for navigation highlighting
-      const sections = ['hero', 'experience', 'projects'];
+      const sections = ['hero', 'about', 'education', 'skills', 'experience', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -44,8 +44,12 @@ export default function Header() {
 
   const navItems = [
     { id: 'hero', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'education', label: 'Education' },
+    { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   return (
@@ -63,12 +67,12 @@ export default function Header() {
           </button>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-2">
+          <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-5 py-2.5 rounded-lg text-base font-medium transition-all duration-200 ${
+                className={`relative px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeSection === item.id
                     ? 'text-gray-200 bg-white/5'
                     : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
@@ -84,7 +88,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2.5 text-gray-400 hover:text-gray-200 transition-colors"
+              className="lg:hidden p-2.5 text-gray-400 hover:text-gray-200 transition-colors"
               aria-label="Toggle menu"
             >
               <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -112,8 +116,8 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'max-h-[40rem] opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
         >
           <div className="p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10">
