@@ -119,11 +119,11 @@ const HeroSection: React.FC = () => {
           >
             <div className="w-full h-[24rem] sm:h-[28rem] flex items-center justify-center relative shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] overflow-hidden rounded-3xl animate-float">
               <Image
-                src="/poza.jpeg"
+                src="/hero.png"
                 alt="Andrei Bejan - Professional Photo"
                 width={640}
                 height={1024}
-                className="w-full h-full object-cover rounded-3xl"
+                className="w-full h-full object-cover object-center scale-[1.15] rounded-3xl"
                 priority
                 quality={100}
                 unoptimized
