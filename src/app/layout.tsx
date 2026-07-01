@@ -11,8 +11,20 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Andrei Bejan Portofolio",
-  description: "My work experience and projects",
+  title: "Andrei Bejan — Fullstack Engineer",
+  description: "Fullstack Software Engineer specializing in Next.js and Spring Boot. Building scalable web applications with modern frontend interfaces and robust backend APIs.",
+  openGraph: {
+    title: "Andrei Bejan — Fullstack Engineer",
+    description: "Fullstack Software Engineer specializing in Next.js and Spring Boot.",
+    url: "https://portofolio-beta-pied.vercel.app",
+    siteName: "Andrei Bejan",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Andrei Bejan — Fullstack Engineer",
+    description: "Fullstack Software Engineer specializing in Next.js and Spring Boot.",
+  },
 };
 
 export default function RootLayout({
